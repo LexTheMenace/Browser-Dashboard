@@ -1,0 +1,39 @@
+<div class="edit-note-wrapper container blurred-white-bg">
+  <h2 class="is-bold">Edit Note</h2>
+
+  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)" *ngIf="note">
+    <div class="form-field">
+      <input
+        type="text"
+        placeholder="Enter Note Title..."
+        [ngModel]="note.title"
+        name="title"
+        required
+        #titleInput="ngModel"
+        minlength="3"
+
+      />
+      <ng-container *ngIf="titleInput.invalid">
+        <p *ngIf="titleInput.errors?.minlength">Title must be at least 3 characters!</p>
+        <p *ngIf="titleInput.errors?.required">Title is required!</p>
+      </ng-container>
+      <!-- <p *ngIf="!form.value.title">Note title is required!</p> -->
+    </div>
+    <div class="form-field">
+      <textarea
+        type="text"
+        placeholder="Enter Note Content..."
+        [ngModel]="note.content"
+        name="content"
+      ></textarea>
+    </div>
+
+    <div class="btn-container align-end">
+      <button type="button" class="btn del" (click)="onDelete()">Delete</button>
+      <a class="btn secondary" routerLink="../">Cancel</a>
+      <button type="submit" class="btn" [disabled]="!form.valid">
+        Save Changes
+      </button>
+    </div>
+  </form>
+</div>

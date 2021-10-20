@@ -1,0 +1,20 @@
+.todos-wrapper{
+  height: 90%;
+  overflow-y: auto;
+}
+.container{
+  flex-direction: column;
+}
+.todo-list{
+  max-height: 90%;
+}
+
+.add-btn i {
+  margin-right: 7px;
+  margin-left: -3px;
+}
+
+app-todo-item{
+  display: block;
+  margin-bottom: 15px;
+}

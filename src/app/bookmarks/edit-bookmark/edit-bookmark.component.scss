@@ -1,0 +1,19 @@
+.edit-bookmark-wrapper{
+  padding: 35px;
+
+}
+
+.btn.del{
+  margin-right: auto;
+  background-color: red;
+  color: white;
+
+  &:hover{
+   background-color: rgb(194, 2, 2);
+
+  }
+  &:active{
+  background-color: rgb(119, 1, 1)!important;
+
+  }
+ }

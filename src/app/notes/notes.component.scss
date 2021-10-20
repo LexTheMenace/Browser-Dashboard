@@ -1,0 +1,20 @@
+.notes-wrapper {
+  height: 90%;
+  overflow-y: auto;
+}
+.container {
+  display: block;
+}
+.notes-list {
+
+}
+
+.add-btn i {
+  margin-right: 7px;
+  margin-left: -3px;
+}
+
+app-note-card{
+  margin-bottom: 15px;
+  display: block;
+}
