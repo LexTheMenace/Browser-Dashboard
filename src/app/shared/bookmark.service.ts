@@ -9,18 +9,12 @@ import { NotificationService } from './notification/notification.service';
 })
 export class BookmarkService {
 
-  bookmarks: Bookmark[] = [
-    new Bookmark('Wikipedia', 'https://www.wikipedia.org/'),
-    new Bookmark('Google', 'https://www.google.com/'),
-    new Bookmark('Reddit', 'https://www.reddit.com/'),
-
-  ];
+  bookmarks: Bookmark[] = [];
   storageSub: Subscription;
 
 
   constructor(private notificationService: NotificationService) {
     this.loadState();
-
 
     this.storageSub = fromEvent<StorageEvent>(window, 'storage').pipe(
       filter((event): event is StorageEvent => event instanceof StorageEvent)
